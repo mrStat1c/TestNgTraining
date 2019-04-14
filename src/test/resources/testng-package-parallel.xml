@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<!--указываем что запуск на уровне <Test>-->
+<suite name="Suite1" verbose="1" parallel="tests">
+    <!--указываем на каком уровне будет распараллелирование (на уровне методов, т.е. тестов) и количество потоков-->
+    <!--можно распараллеливать на уровне классов или др.-->
+    <test name="Regression1" parallel="methods" thread-count="3">
+        <classes>
+            <class name="ru.amelin.ForParallelRunTest">
+            </class>
+        </classes>
+    </test>
+</suite>

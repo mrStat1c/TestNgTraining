@@ -1,0 +1,25 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1" verbose="1" >
+    <test name="Regression1">
+
+        <groups>
+            <run>
+                <include name="smoke"/>
+                <include name="group1"/>
+                <exclude name="negative"/>
+            </run>
+            <!--сортировка запуска тестов по группам-->
+            <dependencies>
+               <!--сначала запустятся тесты smoke, если они пройдут, то тесты group1, если они пройдут, то negative-->
+                <group name="group1" depends-on="smoke"/>
+                <group name="negative" depends-on="group1"/>
+            </dependencies>
+        </groups>
+
+        <packages>
+            <package name="ru.amelin"/>
+        </packages>
+
+    </test>
+</suite>

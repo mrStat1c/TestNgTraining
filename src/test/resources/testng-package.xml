@@ -1,0 +1,36 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1" verbose="1" >
+    <test name="Regression1">
+        <!--для указания пакета, в котором следует запустить тесты-->
+        <!--<packages>-->
+            <!--<package name="ru.amelin" />-->
+        <!--</packages>-->
+
+        <!--указание классов, тесты в которых нужно запустить-->
+        <!--запускаются в том порядке, в котором описаны-->
+        <classes>
+            <class name="ru.amelin.ChildClassTest">
+            <methods>
+                <!--запускаются только указанные тесты-->
+                <include name="newtest1"/>
+            </methods>
+            </class>
+            <class name="ru.amelin.SomethingClassTest2">
+                <methods>
+                    <!--исключаются указанные тесты-->
+                    <exclude name="test4"/>
+                </methods>
+            </class>
+        </classes>
+
+        <!--указание групп (по тегам), которые следует запускать-->
+        <!--<groups>-->
+            <!--<run>-->
+                <!--<include name="smoke"/>-->
+                <!--<exclude name="negative"/>-->
+            <!--</run>-->
+        <!--</groups>-->
+
+    </test>
+</suite>
