@@ -7,8 +7,8 @@ import org.testng.ITestResult;
 
 public class TestListener implements IInvokedMethodListener {
 
-    public void beforeInvocation(IInvokedMethod iInvokedMethod, ITestResult iTestResult) {//инжектится информация о тестовом методе
-        if (iInvokedMethod.isTestMethod()) {//условие на то, что метод является тестом, а не фикстурой
+    public void beforeInvocation(IInvokedMethod iInvokedMethod, ITestResult iTestResult) {//РёРЅР¶РµРєС‚РёС‚СЃСЏ РёРЅС„РѕСЂРјР°С†РёСЏ Рѕ С‚РµСЃС‚РѕРІРѕРј РјРµС‚РѕРґРµ
+        if (iInvokedMethod.isTestMethod()) {//СѓСЃР»РѕРІРёРµ РЅР° С‚Рѕ, С‡С‚Рѕ РјРµС‚РѕРґ СЏРІР»СЏРµС‚СЃСЏ С‚РµСЃС‚РѕРј, Р° РЅРµ С„РёРєСЃС‚СѓСЂРѕР№
             System.out.println("Something happened before start test method " + iInvokedMethod.getTestMethod().getMethodName());
         }
     }
@@ -19,5 +19,5 @@ public class TestListener implements IInvokedMethodListener {
         }
     }
 
-//    получается что-то типа фикстуры
+//    РїРѕР»СѓС‡Р°РµС‚СЃСЏ С‡С‚Рѕ-С‚Рѕ С‚РёРїР° С„РёРєСЃС‚СѓСЂС‹
 }

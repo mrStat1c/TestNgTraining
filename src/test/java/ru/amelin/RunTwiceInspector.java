@@ -4,9 +4,9 @@ import org.testng.IHookCallBack;
 import org.testng.IHookable;
 import org.testng.ITestResult;
 
-public class RunTwiceInspector implements IHookable {//позволяет заменить выполнение теста на выполнение другого кода
+public class RunTwiceInspector implements IHookable {//РїРѕР·РІРѕР»СЏРµС‚ Р·Р°РјРµРЅРёС‚СЊ РІС‹РїРѕР»РЅРµРЅРёРµ С‚РµСЃС‚Р° РЅР° РІС‹РїРѕР»РЅРµРЅРёРµ РґСЂСѓРіРѕРіРѕ РєРѕРґР°
 
-//iHookCallBack - тестовый метод, который должен быть запущен
+//iHookCallBack - С‚РµСЃС‚РѕРІС‹Р№ РјРµС‚РѕРґ, РєРѕС‚РѕСЂС‹Р№ РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ Р·Р°РїСѓС‰РµРЅ
     public void run(IHookCallBack iHookCallBack, ITestResult iTestResult) {
         System.out.println("Start something...");
     }

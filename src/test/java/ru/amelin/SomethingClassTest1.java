@@ -4,33 +4,33 @@ import org.testng.annotations.*;
 
 public class SomethingClassTest1 {
 
-    @Test(groups = {"positive", "smoke"})//включение теста в некоторые группы (можно будет запускать только отдельные группы тестов)
+    @Test(groups = {"positive", "smoke"})//РІРєР»СЋС‡РµРЅРёРµ С‚РµСЃС‚Р° РІ РЅРµРєРѕС‚РѕСЂС‹Рµ РіСЂСѓРїРїС‹ (РјРѕР¶РЅРѕ Р±СѓРґРµС‚ Р·Р°РїСѓСЃРєР°С‚СЊ С‚РѕР»СЊРєРѕ РѕС‚РґРµР»СЊРЅС‹Рµ РіСЂСѓРїРїС‹ С‚РµСЃС‚РѕРІ)
     public void test1(){
-        System.out.println("Test1");//запустится
+        System.out.println("Test1");//Р·Р°РїСѓСЃС‚РёС‚СЃСЏ
     }
 
     @Test(groups = {"negative", "smoke"})
     public void test2(){
-        System.out.println("Test2");//запустится
+        System.out.println("Test2");//Р·Р°РїСѓСЃС‚РёС‚СЃСЏ
     }
 
     @Test(enabled = false)
     public void test3(){
-        System.out.println("Test3");//не запустится, т.к. отключен
+        System.out.println("Test3");//РЅРµ Р·Р°РїСѓСЃС‚РёС‚СЃСЏ, С‚.Рє. РѕС‚РєР»СЋС‡РµРЅ
     }
 
     @Test
     private void test4(){
-        System.out.println("Test4");//private, но тоже запустится т.к. помечен аннотацией
+        System.out.println("Test4");//private, РЅРѕ С‚РѕР¶Рµ Р·Р°РїСѓСЃС‚РёС‚СЃСЏ С‚.Рє. РїРѕРјРµС‡РµРЅ Р°РЅРЅРѕС‚Р°С†РёРµР№
     }
 
-    @BeforeMethod(groups = {"smoke"})//будет запускаться только при запуске тестов с группой smoke
-    public void before(){//перед каждым тестом
+    @BeforeMethod(groups = {"smoke"})//Р±СѓРґРµС‚ Р·Р°РїСѓСЃРєР°С‚СЊСЃСЏ С‚РѕР»СЊРєРѕ РїСЂРё Р·Р°РїСѓСЃРєРµ С‚РµСЃС‚РѕРІ СЃ РіСЂСѓРїРїРѕР№ smoke
+    public void before(){//РїРµСЂРµРґ РєР°Р¶РґС‹Рј С‚РµСЃС‚РѕРј
         System.out.println("Before method");
     }
 
-    @AfterMethod(alwaysRun = true)//будет запускаться независимо от групп (тегов)
-    public void after(){//после каждого теста
+    @AfterMethod(alwaysRun = true)//Р±СѓРґРµС‚ Р·Р°РїСѓСЃРєР°С‚СЊСЃСЏ РЅРµР·Р°РІРёСЃРёРјРѕ РѕС‚ РіСЂСѓРїРї (С‚РµРіРѕРІ)
+    public void after(){//РїРѕСЃР»Рµ РєР°Р¶РґРѕРіРѕ С‚РµСЃС‚Р°
         System.out.println("After method");
     }
 
@@ -44,9 +44,9 @@ public class SomethingClassTest1 {
         System.out.println("BeforeClass method");
     }
 
-//    @BeforeSuite, @AfterSuite - для пачки запущенных классов
-//    теги используются только для фильтрации определенных тестов, в связях между тестами не участвуют
-//    @AfterGroups, @BeforeGroups - аннотации для фикстур для указания того, что они запускаются только для тестов с определенными группами
+//    @BeforeSuite, @AfterSuite - РґР»СЏ РїР°С‡РєРё Р·Р°РїСѓС‰РµРЅРЅС‹С… РєР»Р°СЃСЃРѕРІ
+//    С‚РµРіРё РёСЃРїРѕР»СЊР·СѓСЋС‚СЃСЏ С‚РѕР»СЊРєРѕ РґР»СЏ С„РёР»СЊС‚СЂР°С†РёРё РѕРїСЂРµРґРµР»РµРЅРЅС‹С… С‚РµСЃС‚РѕРІ, РІ СЃРІСЏР·СЏС… РјРµР¶РґСѓ С‚РµСЃС‚Р°РјРё РЅРµ СѓС‡Р°СЃС‚РІСѓСЋС‚
+//    @AfterGroups, @BeforeGroups - Р°РЅРЅРѕС‚Р°С†РёРё РґР»СЏ С„РёРєСЃС‚СѓСЂ РґР»СЏ СѓРєР°Р·Р°РЅРёСЏ С‚РѕРіРѕ, С‡С‚Рѕ РѕРЅРё Р·Р°РїСѓСЃРєР°СЋС‚СЃСЏ С‚РѕР»СЊРєРѕ РґР»СЏ С‚РµСЃС‚РѕРІ СЃ РѕРїСЂРµРґРµР»РµРЅРЅС‹РјРё РіСЂСѓРїРїР°РјРё
 }
 
 

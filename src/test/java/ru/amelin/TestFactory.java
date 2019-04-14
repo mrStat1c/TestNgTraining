@@ -4,12 +4,12 @@ import org.testng.annotations.Factory;
 
 public class TestFactory {
 
-//    генерация тестовых данных для группы методов
-//    параметризация генераторов тестовых данных
+//    РіРµРЅРµСЂР°С†РёСЏ С‚РµСЃС‚РѕРІС‹С… РґР°РЅРЅС‹С… РґР»СЏ РіСЂСѓРїРїС‹ РјРµС‚РѕРґРѕРІ
+//    РїР°СЂР°РјРµС‚СЂРёР·Р°С†РёСЏ РіРµРЅРµСЂР°С‚РѕСЂРѕРІ С‚РµСЃС‚РѕРІС‹С… РґР°РЅРЅС‹С…
 
     @Factory
     public Object[] testFabric(){
-        Object[] tests = new Object[3];//экзмепляры тестовых классов, которые будут запускаться
+        Object[] tests = new Object[3];//СЌРєР·РјРµРїР»СЏСЂС‹ С‚РµСЃС‚РѕРІС‹С… РєР»Р°СЃСЃРѕРІ, РєРѕС‚РѕСЂС‹Рµ Р±СѓРґСѓС‚ Р·Р°РїСѓСЃРєР°С‚СЊСЃСЏ
         tests[0] = new ClassTestWithOrdering();
         tests[1] = new SomethingClassTest1();
         tests[2] = new SomethingClassTest2();

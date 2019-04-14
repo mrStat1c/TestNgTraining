@@ -5,7 +5,7 @@ import org.testng.ITestResult;
 
 public class RunUntilSuccess implements IRetryAnalyzer {
 
-//    если true (когда тест не прошел), тогда запустить тест повторно
+//    РµСЃР»Рё true (РєРѕРіРґР° С‚РµСЃС‚ РЅРµ РїСЂРѕС€РµР»), С‚РѕРіРґР° Р·Р°РїСѓСЃС‚РёС‚СЊ С‚РµСЃС‚ РїРѕРІС‚РѕСЂРЅРѕ
     public boolean retry(ITestResult iTestResult) {
         return !iTestResult.isSuccess();
     }

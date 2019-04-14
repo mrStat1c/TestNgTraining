@@ -14,26 +14,26 @@ public class SomethingClassTest2 {
 
 
     public void test1() {
-        System.out.println("Test1");//запустится
+        System.out.println("Test1");//Р·Р°РїСѓСЃС‚РёС‚СЃСЏ
     }
 
 
     private void test2() {
-        System.out.println("Test2");//не запустится, т.к. private и @Test только у класса
+        System.out.println("Test2");//РЅРµ Р·Р°РїСѓСЃС‚РёС‚СЃСЏ, С‚.Рє. private Рё @Test С‚РѕР»СЊРєРѕ Сѓ РєР»Р°СЃСЃР°
     }
 
     @Test(enabled = false)
     public void test3() {
-        System.out.println("Test3");//не запустится
+        System.out.println("Test3");//РЅРµ Р·Р°РїСѓСЃС‚РёС‚СЃСЏ
     }
 
     public void test4() {
-        System.out.println("Test4");//запустится
+        System.out.println("Test4");//Р·Р°РїСѓСЃС‚РёС‚СЃСЏ
         Assert.assertEquals(1, 2);
     }
 
     @AfterMethod
-//    инъекция тестового результата в фикстуру AfterMethod
+//    РёРЅСЉРµРєС†РёСЏ С‚РµСЃС‚РѕРІРѕРіРѕ СЂРµР·СѓР»СЊС‚Р°С‚Р° РІ С„РёРєСЃС‚СѓСЂСѓ AfterMethod
     public void afterMethod(ITestResult result) {
         if (!result.isSuccess()) {
             System.out.println("Repair data!");
@@ -41,8 +41,8 @@ public class SomethingClassTest2 {
     }
 
     @BeforeMethod
-//    инъекция информации о методе (тесте) в фикстуру BeforeMethod либо AfterMethod (тип Method из Reflection)
-//    также можно передавать информацию о тесте в DataProvider
+//    РёРЅСЉРµРєС†РёСЏ РёРЅС„РѕСЂРјР°С†РёРё Рѕ РјРµС‚РѕРґРµ (С‚РµСЃС‚Рµ) РІ С„РёРєСЃС‚СѓСЂСѓ BeforeMethod Р»РёР±Рѕ AfterMethod (С‚РёРї Method РёР· Reflection)
+//    С‚Р°РєР¶Рµ РјРѕР¶РЅРѕ РїРµСЂРµРґР°РІР°С‚СЊ РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ С‚РµСЃС‚Рµ РІ DataProvider
     public void beforeMethod(Method method) {
         System.out.println("Will call test " + method.getName());
         System.out.println("Annotations of tests:" + Arrays.toString(method.getDeclaredAnnotations()));

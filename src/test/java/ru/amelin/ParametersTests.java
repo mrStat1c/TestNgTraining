@@ -9,12 +9,12 @@ import java.util.Iterator;
 import java.util.List;
 
 //@Listeners(TestListener.class)
-//наблюдатель для тестового класса (подключается не только к данному тестовому классу, но и ко всем остальным)
-@Listeners(RunTwiceInspector.class)//подключает перехватчик, который заменяет тесты на какой-то другой код
+//РЅР°Р±Р»СЋРґР°С‚РµР»СЊ РґР»СЏ С‚РµСЃС‚РѕРІРѕРіРѕ РєР»Р°СЃСЃР° (РїРѕРґРєР»СЋС‡Р°РµС‚СЃСЏ РЅРµ С‚РѕР»СЊРєРѕ Рє РґР°РЅРЅРѕРјСѓ С‚РµСЃС‚РѕРІРѕРјСѓ РєР»Р°СЃСЃСѓ, РЅРѕ Рё РєРѕ РІСЃРµРј РѕСЃС‚Р°Р»СЊРЅС‹Рј)
+@Listeners(RunTwiceInspector.class)//РїРѕРґРєР»СЋС‡Р°РµС‚ РїРµСЂРµС…РІР°С‚С‡РёРє, РєРѕС‚РѕСЂС‹Р№ Р·Р°РјРµРЅСЏРµС‚ С‚РµСЃС‚С‹ РЅР° РєР°РєРѕР№-С‚Рѕ РґСЂСѓРіРѕР№ РєРѕРґ
 public class ParametersTests {
 
-    @Test(dataProviderClass = ParametersTests.class, dataProvider = "somethingProvider")//использование DataProvider для параметризации теста
-    //тест запустится 2 раза с разными параметрами (параметры задаются в somethingProvider())
+    @Test(dataProviderClass = ParametersTests.class, dataProvider = "somethingProvider")//РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµ DataProvider РґР»СЏ РїР°СЂР°РјРµС‚СЂРёР·Р°С†РёРё С‚РµСЃС‚Р°
+    //С‚РµСЃС‚ Р·Р°РїСѓСЃС‚РёС‚СЃСЏ 2 СЂР°Р·Р° СЃ СЂР°Р·РЅС‹РјРё РїР°СЂР°РјРµС‚СЂР°РјРё (РїР°СЂР°РјРµС‚СЂС‹ Р·Р°РґР°СЋС‚СЃСЏ РІ somethingProvider())
     public void test1(int x1, int x2) {
         System.out.println("Test3: x1 = " + x1 + ", x2 = " + x2);
     }
@@ -22,20 +22,20 @@ public class ParametersTests {
     @DataProvider
     public Iterator<Object[]> somethingProvider() {
         List<Object[]> data = new ArrayList<Object[]>();
-        data.add(new Object[]{1,2});//задаем все возможные варианты параметров
+        data.add(new Object[]{1,2});//Р·Р°РґР°РµРј РІСЃРµ РІРѕР·РјРѕР¶РЅС‹Рµ РІР°СЂРёР°РЅС‚С‹ РїР°СЂР°РјРµС‚СЂРѕРІ
         data.add(new Object[]{3,4});
         return data.iterator();
     }
 
 
-    @Test(retryAnalyzer = RunUntilSuccess.class)//использовать анализатор для повторного запуска теста (см. класс RunUntilSuccess)
+    @Test(retryAnalyzer = RunUntilSuccess.class)//РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ Р°РЅР°Р»РёР·Р°С‚РѕСЂ РґР»СЏ РїРѕРІС‚РѕСЂРЅРѕРіРѕ Р·Р°РїСѓСЃРєР° С‚РµСЃС‚Р° (СЃРј. РєР»Р°СЃСЃ RunUntilSuccess)
     public void test2() {
         System.out.println("test2");
     }
 
 
-//    ин-с IMethodIntercepror позволяет упорядочить запуск тестовых методов
-//    ин-с IAnnotationTranformer позволяет изменить аннотации тестового метода по каким-то условиям. Например, если для данного теста
-//    есть незакрытый баг, можно проставить для аннотации Test параметр enabled = false. Настройка производится в конфиге в тегах
+//    РёРЅ-СЃ IMethodIntercepror РїРѕР·РІРѕР»СЏРµС‚ СѓРїРѕСЂСЏРґРѕС‡РёС‚СЊ Р·Р°РїСѓСЃРє С‚РµСЃС‚РѕРІС‹С… РјРµС‚РѕРґРѕРІ
+//    РёРЅ-СЃ IAnnotationTranformer РїРѕР·РІРѕР»СЏРµС‚ РёР·РјРµРЅРёС‚СЊ Р°РЅРЅРѕС‚Р°С†РёРё С‚РµСЃС‚РѕРІРѕРіРѕ РјРµС‚РѕРґР° РїРѕ РєР°РєРёРј-С‚Рѕ СѓСЃР»РѕРІРёСЏРј. РќР°РїСЂРёРјРµСЂ, РµСЃР»Рё РґР»СЏ РґР°РЅРЅРѕРіРѕ С‚РµСЃС‚Р°
+//    РµСЃС‚СЊ РЅРµР·Р°РєСЂС‹С‚С‹Р№ Р±Р°Рі, РјРѕР¶РЅРѕ РїСЂРѕСЃС‚Р°РІРёС‚СЊ РґР»СЏ Р°РЅРЅРѕС‚Р°С†РёРё Test РїР°СЂР°РјРµС‚СЂ enabled = false. РќР°СЃС‚СЂРѕР№РєР° РїСЂРѕРёР·РІРѕРґРёС‚СЃСЏ РІ РєРѕРЅС„РёРіРµ РІ С‚РµРіР°С…
 //    <listener>
 }

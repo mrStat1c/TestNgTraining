@@ -5,8 +5,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 @Test
-public class ChildClassTest extends SomethingClassTest1{//при запуске класса, также запустятся все тесты из родительского класса
-    //названия методов должны отличаться
+public class ChildClassTest extends SomethingClassTest1{//РїСЂРё Р·Р°РїСѓСЃРєРµ РєР»Р°СЃСЃР°, С‚Р°РєР¶Рµ Р·Р°РїСѓСЃС‚СЏС‚СЃСЏ РІСЃРµ С‚РµСЃС‚С‹ РёР· СЂРѕРґРёС‚РµР»СЊСЃРєРѕРіРѕ РєР»Р°СЃСЃР°
+    //РЅР°Р·РІР°РЅРёСЏ РјРµС‚РѕРґРѕРІ РґРѕР»Р¶РЅС‹ РѕС‚Р»РёС‡Р°С‚СЊСЃСЏ
 
 
 
@@ -18,15 +18,15 @@ public class ChildClassTest extends SomethingClassTest1{//при запуске класса, та
         System.out.println("Test2 from child class");
     }
 
-    @BeforeMethod//сначала выполнится Before из родительского класса, потом этот Before
-    //будет выполняться и для тестов родительского класса
-    public void newbefore(){//перед каждым тестом
+    @BeforeMethod//СЃРЅР°С‡Р°Р»Р° РІС‹РїРѕР»РЅРёС‚СЃСЏ Before РёР· СЂРѕРґРёС‚РµР»СЊСЃРєРѕРіРѕ РєР»Р°СЃСЃР°, РїРѕС‚РѕРј СЌС‚РѕС‚ Before
+    //Р±СѓРґРµС‚ РІС‹РїРѕР»РЅСЏС‚СЊСЃСЏ Рё РґР»СЏ С‚РµСЃС‚РѕРІ СЂРѕРґРёС‚РµР»СЊСЃРєРѕРіРѕ РєР»Р°СЃСЃР°
+    public void newbefore(){//РїРµСЂРµРґ РєР°Р¶РґС‹Рј С‚РµСЃС‚РѕРј
         System.out.println("Before method from child class");
     }
 
-    @AfterMethod//сначала выполнится этот After, потом After из родительского класса
-    //будет выполняться и для тестов родительского класса
-    public void newafter(){//после каждого теста
+    @AfterMethod//СЃРЅР°С‡Р°Р»Р° РІС‹РїРѕР»РЅРёС‚СЃСЏ СЌС‚РѕС‚ After, РїРѕС‚РѕРј After РёР· СЂРѕРґРёС‚РµР»СЊСЃРєРѕРіРѕ РєР»Р°СЃСЃР°
+    //Р±СѓРґРµС‚ РІС‹РїРѕР»РЅСЏС‚СЊСЃСЏ Рё РґР»СЏ С‚РµСЃС‚РѕРІ СЂРѕРґРёС‚РµР»СЊСЃРєРѕРіРѕ РєР»Р°СЃСЃР°
+    public void newafter(){//РїРѕСЃР»Рµ РєР°Р¶РґРѕРіРѕ С‚РµСЃС‚Р°
         System.out.println("After method from child class");
     }
 }
